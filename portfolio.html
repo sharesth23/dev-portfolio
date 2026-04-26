@@ -369,3 +369,70 @@ vs.<span class="fn">plot_smile</span>(expiry=<span class="st">"2025-03-21"</span
     </div>
   </div>
 </div>
+<!-- ═══════════ MODAL 2: Dynamic Correlation ═══════════ -->
+<div class="modal-overlay" id="m2" onclick="closeOnBg(event,'m2')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('m2')">✕</button>
+    <div class="readme-header">
+      <div class="readme-breadcrumb">sharesth23 / <span>Dynamic-Correlation-Heatmap-Regime-Analysis</span></div>
+      <div class="readme-title">📊 Dynamic Correlation &amp; Regime Analysis</div>
+      <div class="readme-tagline">Cross-asset correlation research framework studying time-varying dependence, regime dynamics, and systemic risk decomposition via PCA.</div>
+      <div class="badge-row"><span class="badge b-py">Python</span><span class="badge b-quant">Quant Finance</span><span class="badge b-mit">MIT License</span></div>
+    </div>
+    <div class="readme-body">
+      <div class="rm-section">
+        <div class="rm-h">🔬 Research motivation</div>
+        <p style="color:var(--muted2);font-size:0.83rem;line-height:1.85;margin-bottom:0.85rem">Modern portfolio construction relies heavily on correlation assumptions. Empirical evidence shows correlations are <strong style="color:var(--text)">non-stationary</strong>, diversification benefits <strong style="color:var(--text)">collapse during crises</strong>, and cross-asset relationships shift structurally after major macro events.</p>
+        <div class="alert"><span>🎯</span><span>Core question: <strong>How stable is diversification when markets transition between regimes?</strong> This project quantifies when and why diversification fails.</span></div>
+      </div>
+      <div class="rm-section">
+        <div class="rm-h">🌐 Asset universe</div>
+        <table class="api-table">
+          <thead><tr><th>Asset Class</th><th>Instrument</th><th>Role</th></tr></thead>
+          <tbody>
+            <tr><td>Equities</td><td>S&P 500, NASDAQ, DAX</td><td>Risk-on growth exposure</td></tr>
+            <tr><td>FX</td><td>EUR/USD, USD/JPY</td><td>Risk sentiment &amp; funding flows</td></tr>
+            <tr><td>Rates</td><td>US 10Y Treasury Yield</td><td>Policy &amp; discounting channel</td></tr>
+            <tr><td>Commodities</td><td>Gold, Crude Oil</td><td>Inflation hedge &amp; growth sensitivity</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="rm-section">
+        <div class="rm-h">🧠 Methodology</div>
+        <div class="feat-grid">
+          <div class="feat-card"><span class="feat-icon-big">🔄</span><h4>Rolling Correlation</h4><p>Time-indexed matrices C_t computed over rolling window W — a full time series of dependence structures.</p></div>
+          <div class="feat-card"><span class="feat-icon-big">🔥</span><h4>Heatmap Visualization</h4><p>Animated heatmaps reveal clustering, hedge breakdown, and crisis-driven co-movement over time.</p></div>
+          <div class="feat-card"><span class="feat-icon-big">📐</span><h4>PCA / Eigen Decomp</h4><p>PC1 explained variance acts as a low-dimensional proxy for systemic market-wide co-movement.</p></div>
+          <div class="feat-card"><span class="feat-icon-big">📅</span><h4>Pre vs Post-COVID</h4><p>Structural shift analysis comparing 2015–2019 vs 2020+ to identify persistent correlation changes.</p></div>
+        </div>
+      </div>
+      <div class="rm-section">
+        <div class="rm-h">🏗️ Architecture</div>
+        <div class="tree">
+<span class="d">dynamic-correlation-regimes/</span>
+├── <span class="d">data/</span>
+│   └── <span class="f">tickers.py</span>         <span class="c"># cross-asset universe</span>
+├── <span class="d">src/</span>
+│   ├── <span class="f">data_loader.py</span>     <span class="c"># data ingestion &amp; returns</span>
+│   ├── <span class="f">correlation.py</span>     <span class="c"># rolling correlation engine</span>
+│   ├── <span class="f">regimes.py</span>         <span class="c"># regime interpretation</span>
+│   ├── <span class="f">visualization.py</span>   <span class="c"># heatmaps &amp; animations</span>
+│   └── <span class="f">pca_analysis.py</span>    <span class="c"># eigen-decomp &amp; systemic risk</span>
+├── <span class="d">notebooks/</span>
+│   └── <span class="f">correlation_analysis.ipynb</span>
+└── <span class="f">run.py</span>             <span class="c"># end-to-end pipeline</span>
+        </div>
+      </div>
+      <div class="rm-section">
+        <div class="rm-h">💡 Key empirical findings</div>
+        <ul class="why-list" style="padding-left:0">
+          <li>Cross-asset correlations surge during crises — diversification collapses when needed most</li>
+          <li>PC1 explained variance effectively captures systemic stress regimes</li>
+          <li>Post-COVID markets exhibit persistently elevated baseline correlations</li>
+          <li>Gold and USD/JPY diverge from equities during flight-to-quality episodes</li>
+        </ul>
+      </div>
+      <a class="gh-link" href="https://github.com/sharesth23/Dynamic-Correlation-Heatmap-Regime-Analysis" target="_blank">View full source on GitHub ↗</a>
+    </div>
+  </div>
+</div>
