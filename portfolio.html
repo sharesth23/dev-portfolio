@@ -436,3 +436,59 @@ vs.<span class="fn">plot_smile</span>(expiry=<span class="st">"2025-03-21"</span
     </div>
   </div>
 </div>
+<!-- ═══════════ MODAL 3: Macro Event Tracker ═══════════ -->
+<div class="modal-overlay" id="m3" onclick="closeOnBg(event,'m3')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('m3')">✕</button>
+    <div class="readme-header">
+      <div class="readme-breadcrumb">sharesth23 / <span>Real-Time-Macro-Event-Impact-Tracker</span></div>
+      <div class="readme-title">📊 Real-Time Macro Event Impact Tracker</div>
+      <div class="readme-tagline">Quantifies and visualizes how equities, FX, rates, and volatility react in the minutes and hours after macroeconomic releases.</div>
+      <div class="badge-row"><span class="badge b-py">Python</span><span class="badge" style="background:rgba(255,76,76,0.1);color:#ff8c8c;border:1px solid rgba(255,76,76,0.2)">Streamlit</span><span class="badge b-quant">Quant Research</span><span class="badge b-mit">MIT</span><span class="badge b-active">Active</span></div>
+    </div>
+    <div class="readme-body">
+      <div class="rm-section">
+        <div class="rm-h">🚀 Overview</div>
+        <p style="color:var(--muted2);font-size:0.83rem;line-height:1.85">Macro events — CPI releases, FOMC decisions, NFP, PMI data — cause sudden structural shifts in asset prices. This system <strong style="color:var(--text)">aligns macro events with market data</strong>, computes impact metrics, and presents insights via a live Streamlit dashboard and LaTeX research paper.</p>
+      </div>
+      <div class="rm-section">
+        <div class="rm-h">🧠 Key features</div>
+        <div class="feat-grid">
+          <div class="feat-card"><span class="feat-icon-big">⚡</span><h4>Event Alignment Engine</h4><p>Maps macro event timestamps to price timelines with configurable pre/post windows.</p></div>
+          <div class="feat-card"><span class="feat-icon-big">📊</span><h4>Impact Metrics</h4><p>Abnormal returns, vol spikes, cumulative event-window returns, pre/post regime comparison.</p></div>
+          <div class="feat-card"><span class="feat-icon-big">🌐</span><h4>Cross-Asset Analysis</h4><p>Equity, FX, crypto, rates — simultaneous multi-asset impact measurement.</p></div>
+          <div class="feat-card"><span class="feat-icon-big">🖥️</span><h4>Streamlit Dashboard</h4><p>Interactive event selection, asset-wise comparison, metric viz, time-window sensitivity.</p></div>
+          <div class="feat-card"><span class="feat-icon-big">🧪</span><h4>Experiment Pipelines</h4><p>4 modular experiments: single event, event study, cross-asset, event correlation.</p></div>
+          <div class="feat-card"><span class="feat-icon-big">📄</span><h4>LaTeX Paper</h4><p>Research paper + BibTeX references included for GSoC proposals and quant portfolios.</p></div>
+        </div>
+      </div>
+      <div class="rm-section">
+        <div class="rm-h">▶ Quick start</div>
+        <div class="install-block" style="margin-bottom:0.75rem"><span>$</span> git clone github.com/sharesth23/Real-Time-Macro-Event-Impact-Tracker<br><span>$</span> pip install -r requirements.txt</div>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">bash — launch dashboard</span><div class="code-dots"><span></span><span></span><span></span></div></div>
+          <pre>streamlit run dashboard/app.py</pre>
+        </div>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">bash — run experiment</span><div class="code-dots"><span></span><span></span><span></span></div></div>
+          <pre>python experiments/exp_02_event_study.py</pre>
+        </div>
+      </div>
+      <div class="rm-section">
+        <div class="rm-h">🏗️ Architecture</div>
+        <div class="tree">
+<span class="d">Real-Time-Macro-Event-Impact-Tracker/</span>
+├── <span class="d">dashboard/</span>          <span class="c"># Streamlit UI + data loaders</span>
+├── <span class="d">experiments/</span>        <span class="c"># 4 modular research experiments</span>
+├── <span class="d">src/</span>
+│   ├── <span class="f">event_alignment.py</span> <span class="c"># core engine</span>
+│   ├── <span class="f">impact_metrics.py</span>
+│   ├── <span class="f">visualization.py</span>
+│   └── <span class="f">macro_api.py</span>
+├── <span class="d">paper/</span>              <span class="c"># LaTeX research paper + BibTeX</span>
+└── <span class="d">streaming/</span>          <span class="c"># real-time stream module</span>
+        </div>
+      </div>
+      <a class="gh-link" href="https://github.com/sharesth23/Real-Time-Macro-Event-Impact-Tracker" target="_blank">View full source on GitHub ↗</a>
+    </div>
+  </div>
