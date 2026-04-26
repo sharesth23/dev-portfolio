@@ -492,3 +492,54 @@ vs.<span class="fn">plot_smile</span>(expiry=<span class="st">"2025-03-21"</span
       <a class="gh-link" href="https://github.com/sharesth23/Real-Time-Macro-Event-Impact-Tracker" target="_blank">View full source on GitHub ↗</a>
     </div>
   </div>
+  <!-- ═══════════ MODAL 4: Yield Curve ═══════════ -->
+<div class="modal-overlay" id="m4" onclick="closeOnBg(event,'m4')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('m4')">✕</button>
+    <div class="readme-header">
+      <div class="readme-breadcrumb">sharesth23 / <span>Yield-Curve-Scenario-Stimulator</span></div>
+      <div class="readme-title">📉 Yield Curve Scenario Simulator</div>
+      <div class="readme-tagline">Simulates yield-curve movements and computes Duration, DV01, and convexity to analyse interest rate risk across macro scenarios.</div>
+      <div class="badge-row"><span class="badge b-py">Python</span><span class="badge b-quant">Fixed Income</span><span class="badge b-quant">Interest Rate Risk</span></div>
+    </div>
+    <div class="readme-body">
+      <div class="rm-section">
+        <div class="rm-h">⚡ Why this matters</div>
+        <p style="color:var(--muted2);font-size:0.83rem;line-height:1.85">Interest rate risk is the primary risk factor for fixed-income portfolios. Scenario analysis — parallel shifts, steepeners, flatteners — is fundamental to bond portfolio management, hedging, and risk reporting. This tool makes those computations reproducible and visual.</p>
+      </div>
+      <div class="rm-section">
+        <div class="rm-h">✨ Core capabilities</div>
+        <div class="feat-grid">
+          <div class="feat-card"><span class="feat-icon-big">📐</span><h4>Duration</h4><p>Macaulay and Modified duration for individual bonds and full portfolios.</p></div>
+          <div class="feat-card"><span class="feat-icon-big">💹</span><h4>DV01</h4><p>Dollar value of a basis point — the core hedging metric for rate desks.</p></div>
+          <div class="feat-card"><span class="feat-icon-big">📊</span><h4>Convexity</h4><p>Second-order price sensitivity for accurate pricing beyond linear approximation.</p></div>
+          <div class="feat-card"><span class="feat-icon-big">🎛️</span><h4>Scenario Simulation</h4><p>Parallel shifts, steepeners, flatteners, butterfly scenarios with P&amp;L attribution.</p></div>
+        </div>
+      </div>
+      <div class="rm-section">
+        <div class="rm-h">📖 Key formulas</div>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">python</span><div class="code-dots"><span></span><span></span><span></span></div></div>
+          <pre><span class="cm"># DV01: price sensitivity to 1bp yield shift</span>
+dv01 = -duration * price * <span class="st">0.0001</span>
+
+<span class="cm"># Convexity-adjusted P&L</span>
+delta_p = -duration * delta_y + <span class="st">0.5</span> * convexity * delta_y**<span class="st">2</span>
+
+<span class="cm"># Scenario P&L</span>
+pnl = dv01 * shift_bps + convexity_adj</pre>
+        </div>
+      </div>
+      <div class="rm-section">
+        <div class="rm-h">💡 Use cases</div>
+        <ul class="why-list" style="padding-left:0">
+          <li>Bond portfolio risk reporting and hedging</li>
+          <li>FOMC scenario stress testing</li>
+          <li>Fixed income desk quant tooling</li>
+          <li>Interest rate derivatives valuation support</li>
+        </ul>
+      </div>
+      <a class="gh-link" href="https://github.com/sharesth23/Yield-Curve-Scenario-Stimulator-" target="_blank">View full source on GitHub ↗</a>
+    </div>
+  </div>
+</div>
