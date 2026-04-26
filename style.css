@@ -119,3 +119,24 @@ pre{padding:1.1rem;overflow-x:auto;font-size:0.77rem;line-height:1.75;color:#b4b
 .kw{color:#c792ea}
 .fn{color:var(--accent)}
 .st{color:#f78c6c}
+.cm{color:#546e7a;font-style:italic}
+.install-block{background:rgba(0,229,160,0.04);border:1px solid rgba(0,229,160,0.15);border-radius:8px;padding:1rem 1.25rem;font-family:'Space Mono',monospace;font-size:0.8rem;color:var(--accent)}
+.install-block span{color:var(--muted)}
+.alert{background:rgba(255,107,53,0.06);border:1px solid rgba(255,107,53,0.18);border-radius:8px;padding:0.9rem 1.1rem;font-size:0.78rem;color:#ffb59a;line-height:1.7;display:flex;gap:0.7rem;align-items:flex-start}
+.models-row{display:flex;gap:0.5rem;flex-wrap:wrap}
+.model-pill{padding:0.3rem 0.85rem;border-radius:4px;font-size:0.72rem;font-weight:700;letter-spacing:0.04em}
+.mp-blue{background:rgba(55,138,221,0.15);color:#6aaeff;border:1px solid rgba(55,138,221,0.25)}
+.mp-purple{background:rgba(123,92,250,0.15);color:#a78bfa;border:1px solid rgba(123,92,250,0.25)}
+.mp-teal{background:rgba(0,229,160,0.12);color:var(--accent);border:1px solid rgba(0,229,160,0.22)}
+.mp-orange{background:rgba(255,107,53,0.12);color:#ff9068;border:1px solid rgba(255,107,53,0.22)}
+.tree{background:#08080f;border:1px solid var(--border);border-radius:8px;padding:1.1rem 1.3rem;font-family:'Space Mono',monospace;font-size:0.74rem;color:#8888aa;line-height:1.9;overflow-x:auto}
+.tree .d{color:var(--accent2)}
+.tree .f{color:var(--muted2)}
+.tree .c{color:var(--muted);font-style:italic}
+.gh-link{display:inline-flex;align-items:center;gap:0.5rem;color:var(--accent);text-decoration:none;font-size:0.78rem;border:1px solid rgba(0,229,160,0.2);padding:0.5rem 1rem;border-radius:5px;transition:all 0.2s;margin-top:1.5rem}
+.gh-link:hover{background:rgba(0,229,160,0.07)}
+.opensource-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.25rem}
+.oss-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.5rem;transition:border-color 0.2s,transform 0.25s,box-shadow 0.25s;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.oss-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));opacity:0;transition:opacity 0.3s}
+.oss-card:hover{border-color:rgba(0,229,160,0.28);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,229,160,0.08)}
+.oss-card:hover::before{opacity:1}
