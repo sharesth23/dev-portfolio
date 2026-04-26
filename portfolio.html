@@ -543,3 +543,41 @@ pnl = dv01 * shift_bps + convexity_adj</pre>
     </div>
   </div>
 </div>
+<!-- ═══════════ MODAL 5: LightSwap ═══════════ -->
+<div class="modal-overlay" id="m5" onclick="closeOnBg(event,'m5')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('m5')">✕</button>
+    <div class="readme-header">
+      <div class="readme-breadcrumb">sharesth23 / <span>lightswap</span></div>
+      <div class="readme-title">⚡ LightSwap</div>
+      <div class="readme-tagline">High-performance, non-custodial submarine swap service in Rust bridging Bitcoin on-chain and the Lightning Network.</div>
+      <div class="badge-row"><span class="badge b-rs">Rust</span><span class="badge b-btc">Bitcoin</span><span class="badge b-btc">Lightning Network</span><span class="badge b-mit">MIT</span></div>
+    </div>
+    <div class="readme-body">
+      <div class="rm-section">
+        <div class="rm-h">🔍 What is a submarine swap?</div>
+        <p style="color:var(--muted2);font-size:0.83rem;line-height:1.85;margin-bottom:0.85rem">A submarine swap is an atomic cross-layer exchange — trustlessly moving funds between Bitcoin's main chain (L1) and the Lightning Network (L2) without a custodian. Both legs are secured by Hash Time Lock Contracts (HTLCs): both complete atomically or both fail.</p>
+        <div class="why-grid">
+          <div class="why-col"><h4>On-chain → Lightning</h4><ul class="why-list"><li>Fund Lightning channels without managing UTXOs</li><li>Fund Lightning wallet from cold storage</li><li>Atomic — zero counterparty risk</li></ul></div>
+          <div class="why-col" style="border-color:rgba(255,153,0,0.2)"><h4>Lightning → On-chain</h4><ul class="why-list"><li>Sweep channels to on-chain address</li><li>Rebalance liquidity without channel close</li><li>Non-custodial throughout</li></ul></div>
+        </div>
+      </div>
+      <div class="rm-section">
+        <div class="rm-h">🦀 Why Rust?</div>
+        <div class="feat-grid">
+          <div class="feat-card"><span class="feat-icon-big">⚡</span><h4>Performance</h4><p>Zero-cost abstractions for high-throughput swap routing with no GC pauses.</p></div>
+          <div class="feat-card"><span class="feat-icon-big">🔒</span><h4>Memory Safety</h4><p>Borrow checker eliminates entire classes of bugs critical in financial systems.</p></div>
+          <div class="feat-card"><span class="feat-icon-big">🌐</span><h4>Async Runtime</h4><p>Tokio-based async for concurrent HTLC state machine management.</p></div>
+          <div class="feat-card"><span class="feat-icon-big">🧩</span><h4>Crate Ecosystem</h4><p>bitcoin, lightning-dev, secp256k1 — best-in-class Bitcoin primitives.</p></div>
+        </div>
+      </div>
+      <div class="rm-section">
+        <div class="rm-h">🔑 Core protocol</div>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">rust</span><div class="code-dots"><span></span><span></span><span></span></div></div>
+          <pre><span class="cm">// Initiate submarine swap</span>
+<span class="kw">let</span> swap = <span class="fn">SubmarineSwap::new</span>(
+    amount_sats,
+    preimage_hash,
+    locktime,
+)?;
