@@ -140,3 +140,27 @@ pre{padding:1.1rem;overflow-x:auto;font-size:0.77rem;line-height:1.75;color:#b4b
 .oss-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));opacity:0;transition:opacity 0.3s}
 .oss-card:hover{border-color:rgba(0,229,160,0.28);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,229,160,0.08)}
 .oss-card:hover::before{opacity:1}
+.oss-header{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1rem}
+.oss-header h3{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--text)}
+.oss-desc{color:var(--muted2);font-size:0.82rem;line-height:1.65;margin-bottom:1rem;flex-grow:1}
+.oss-meta{font-size:0.70rem;color:var(--muted);letter-spacing:0.05em;padding:0.5rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:1rem;padding:0.5rem 0}
+.oss-link{display:inline-flex;align-items:center;gap:0.4rem;color:var(--accent);text-decoration:none;font-size:0.75rem;font-weight:600;transition:all 0.2s}
+.oss-link:hover{color:var(--accent2);gap:0.6rem}
+.resume-container{max-width:800px;margin:0 auto}
+.resume-tabs{display:flex;gap:0.5rem;margin-bottom:2rem;flex-wrap:wrap;justify-content:center}
+.resume-tab{background:rgba(255,255,255,0.04);border:1px solid var(--border);color:var(--muted2);padding:0.7rem 1.5rem;border-radius:6px;font-size:0.75rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;font-family:'Space Mono',monospace}
+.resume-tab:hover{border-color:var(--accent);color:var(--accent)}
+.resume-tab.active{background:var(--accent);color:#060608;border-color:var(--accent)}
+.resume-content{position:relative;min-height:400px}
+.resume-panel{display:none;opacity:0;transform:translateY(20px);transition:opacity 0.3s,transform 0.3s;animation:fadeIn 0.4s cubic-bezier(0.22,1,0.36,1)}
+.resume-panel.active{display:block;opacity:1;transform:translateY(0)}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.resume-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:2.5rem;text-align:center;transition:border-color 0.2s,transform 0.25s}
+.resume-card:hover{border-color:rgba(0,229,160,0.28);transform:translateY(-3px)}
+.resume-icon{font-size:2.5rem;margin-bottom:1rem}
+.resume-card h3{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:700;margin-bottom:0.75rem;color:var(--text)}
+.resume-card p{color:var(--muted2);font-size:0.85rem;line-height:1.7;margin-bottom:1.5rem;max-width:500px;margin-left:auto;margin-right:auto}
+.resume-stats{display:flex;gap:0.5rem;justify-content:center;margin-bottom:1.5rem;font-size:0.72rem;color:var(--muted);flex-wrap:wrap}
+.resume-btn{display:inline-flex;align-items:center;gap:0.5rem;background:var(--accent);color:#060608;padding:0.9rem 2rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:0.75rem;letter-spacing:0.05em;transition:all 0.2s;cursor:pointer;border:none}
+.resume-btn:hover{background:#00c48a;transform:translateY(-2px)}
+@media(max-width:768px){
