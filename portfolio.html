@@ -281,3 +281,86 @@
     <a href="https://www.kaggle.com/sharesth2307" target="_blank" style="flex:1;min-width:150px;background:var(--card);border:1px solid var(--border);border-radius:9px;padding:1.4rem 1.5rem;text-decoration:none;color:var(--text);transition:all 0.2s;display:flex;flex-direction:column;align-items:center;gap:0.4rem" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--text)'"><div style="font-size:1.3rem">◈</div><div style="font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase">Kaggle</div><div style="font-size:0.68rem;color:var(--muted)">sharesth2307</div></a>
   </div>
 </section>
+<!-- ═══════════ MODAL 1: VolSurface ═══════════ -->
+<div class="modal-overlay" id="m1" onclick="closeOnBg(event,'m1')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('m1')">✕</button>
+    <div class="readme-header">
+      <div class="readme-breadcrumb">sharesth23 / <span>volsurface</span></div>
+      <div class="readme-title">📈 VolSurface</div>
+      <div class="readme-tagline">Arbitrage-aware implied volatility surface construction from noisy real-world options data.</div>
+      <div class="badge-row"><span class="badge b-py">Python 3.9+</span><span class="badge b-mit">MIT License</span><span class="badge b-quant">Quant Finance</span><span class="badge b-active">Active</span></div>
+    </div>
+    <div class="readme-body">
+      <div class="rm-section">
+        <div class="rm-h">⚡ Why this matters</div>
+        <div class="why-grid">
+          <div class="why-col"><h4>The Problem</h4><ul class="why-list"><li>Noisy option chains with missing strikes</li><li>Calendar &amp; butterfly arbitrage violations</li><li>Unstable interpolation across tenors</li><li>Bad pricing and unreliable Greeks downstream</li></ul></div>
+          <div class="why-col" style="border-color:rgba(0,229,160,0.15)"><h4>What VolSurface Does</h4><ul class="why-list"><li>Cleans raw option chains automatically</li><li>Detects &amp; repairs arbitrage violations</li><li>Calibrates SABR, SVI, and Heston models</li><li>Builds smooth, arbitrage-free surfaces</li></ul></div>
+        </div>
+        <div class="alert" style="margin-top:1rem"><span>⚠</span><span>Without an arbitrage-free surface, downstream Greeks are unreliable and risk models break. <strong>volsurface</strong> enforces no-arbitrage constraints throughout calibration.</span></div>
+      </div>
+      <div class="rm-section">
+        <div class="rm-h">✨ Key features</div>
+        <div class="feat-grid">
+          <div class="feat-card"><span class="feat-icon-big">📊</span><h4>Data Cleaning</h4><p>Removes stale quotes, handles bid-ask spread outliers, fills missing strikes via interpolation.</p></div>
+          <div class="feat-card"><span class="feat-icon-big">🔍</span><h4>Arbitrage Detection</h4><p>Checks butterfly (correctly) and calendar spread no-arbitrage conditions across all tenors.</p></div>
+          <div class="feat-card"><span class="feat-icon-big">🧮</span><h4>Model Calibration</h4><p>SABR, SVI, and Heston calibration with per-expiry fitting and global surface optimization.</p></div>
+          <div class="feat-card"><span class="feat-icon-big">📉</span><h4>Surface Construction</h4><p>Bicubic spline and RBF interpolate across the full (K, T) plane with arbitrage regularization.</p></div>
+          <div class="feat-card"><span class="feat-icon-big">📈</span><h4>Visualization</h4><p>3D surface plots, vol smile plots, calibration diagnostics, and arbitrage heatmaps.</p></div>
+          <div class="feat-card"><span class="feat-icon-big">⚡</span><h4>Greeks Engine</h4><p>Compute delta, vega, volga from the calibrated surface using finite-difference estimators.</p></div>
+        </div>
+      </div>
+      <div class="rm-section">
+        <div class="rm-h">🚀 Quick start</div>
+        <div class="install-block"><span>$</span> pip install volsurface</div>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">python</span><div class="code-dots"><span></span><span></span><span></span></div></div>
+          <pre><span class="kw">from</span> volsurface.core.surface <span class="kw">import</span> <span class="fn">VolSurface</span>
+
+vs = <span class="fn">VolSurface</span>(data)
+vs.<span class="fn">clean</span>()                        <span class="cm"># Step 1 – remove stale quotes</span>
+vs.<span class="fn">detect_arbitrage</span>()              <span class="cm"># Step 2 – detect butterfly & calendar arb</span>
+vs.<span class="fn">calibrate</span>(model=<span class="st">"sabr"</span>)        <span class="cm"># Step 3 – fit SABR per expiry</span>
+vs.<span class="fn">build</span>(method=<span class="st">"spline"</span>)         <span class="cm"># Step 4 – interpolate surface</span>
+vs.<span class="fn">plot_surface</span>()
+vs.<span class="fn">plot_smile</span>(expiry=<span class="st">"2025-03-21"</span>)</pre>
+        </div>
+      </div>
+      <div class="rm-section">
+        <div class="rm-h">📖 API reference</div>
+        <table class="api-table">
+          <thead><tr><th>Method</th><th>Parameters</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td>.clean()</td><td>threshold=0.05</td><td>Remove outlier quotes; interpolate missing strikes.</td></tr>
+            <tr><td>.detect_arbitrage()</td><td>mode='both'</td><td>Identify butterfly &amp; calendar arb violations. Returns report.</td></tr>
+            <tr><td>.calibrate()</td><td>model='sabr', max_expiry=True</td><td>Fit stochastic vol model to cleaned market vols.</td></tr>
+            <tr><td>.build()</td><td>method='spline', grid=100</td><td>Interpolate surface over dense (K, T) grid.</td></tr>
+            <tr><td>.get_vol()</td><td>strike, expiry</td><td>Query implied vol at arbitrary (K, T) coordinate.</td></tr>
+            <tr><td>.plot_surface()</td><td>cmap='viridis'</td><td>Render interactive 3D surface with matplotlib.</td></tr>
+            <tr><td>.greeks()</td><td>strike, expiry, spot</td><td>Compute delta, vega, volga from calibrated surface.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="rm-section">
+        <div class="rm-h">🏗️ Architecture</div>
+        <div class="tree">
+<span class="d">volsurface/</span>
+├── <span class="d">core/</span>            <span class="f">surface.py</span>, <span class="f">builder.py</span>
+├── <span class="d">models/</span>          <span class="f">sabr.py</span>, <span class="f">black_scholes.py</span>
+├── <span class="d">calibration/</span>     <span class="f">sabr_calibration.py</span>, <span class="f">objective.py</span>
+├── <span class="d">arbitrage/</span>       <span class="f">detection.py</span>, <span class="f">correction.py</span>
+├── <span class="d">interpolation/</span>   <span class="f">spline.py</span>, <span class="f">grid.py</span>
+├── <span class="d">visualization/</span>   <span class="f">smile.py</span>, <span class="f">surface_plot.py</span>
+├── <span class="d">tests/</span>
+└── <span class="d">examples/</span>
+        </div>
+      </div>
+      <div class="rm-section">
+        <div class="rm-h">🏷️ Supported models</div>
+        <div class="models-row"><span class="model-pill mp-blue">SABR</span><span class="model-pill mp-purple">SVI (Gatheral)</span><span class="model-pill mp-teal">Heston</span><span class="model-pill mp-orange">Bicubic Spline</span><span class="model-pill mp-blue">RBF</span><span class="model-pill mp-purple">Kernel Smoothing</span></div>
+      </div>
+      <a class="gh-link" href="https://github.com/sharesth23/volsurface" target="_blank">View full source on GitHub ↗</a>
+    </div>
+  </div>
+</div>
