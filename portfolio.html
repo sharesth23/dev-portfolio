@@ -581,3 +581,28 @@ pnl = dv01 * shift_bps + convexity_adj</pre>
     preimage_hash,
     locktime,
 )?;
+<span class="cm">// Verify HTLC on-chain before paying invoice</span>
+swap.<span class="fn">verify_htlc_confirmed</span>(&amp;chain_client).<span class="kw">await</span>?;
+swap.<span class="fn">pay_lightning_invoice</span>(&amp;ln_client).<span class="kw">await</span>?;</pre>
+        </div>
+      </div>
+      <div class="rm-section">
+        <div class="rm-h">🏗️ Architecture</div>
+        <div class="tree">
+<span class="d">lightswap/</span>
+├── <span class="d">crates/core/src/</span>
+│   ├── <span class="f">swap.rs</span>         <span class="c"># core swap state machine</span>
+│   ├── <span class="f">htlc.rs</span>         <span class="c"># Hash Time Lock Contracts</span>
+│   ├── <span class="f">chain.rs</span>        <span class="c"># on-chain Bitcoin interface</span>
+│   └── <span class="f">lightning.rs</span>    <span class="c"># LN invoice &amp; routing</span>
+└── <span class="f">rootcargo.toml</span>
+        </div>
+      </div>
+      <a class="gh-link" href="https://github.com/sharesth23/lightswap" target="_blank">View full source on GitHub ↗</a>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
